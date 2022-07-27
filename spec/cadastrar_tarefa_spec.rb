@@ -31,6 +31,7 @@ describe 'cadastrar tarefa',:cadastrar_tarefa do
 
         @tarefas = Cadastrar.post('/tasks', body: @body, headers: @header)
         puts @tarefas.body
+        expect(@tarefas.parsed_response['data']['attributes']['title']).to eq 'Criar Tarefa'
       end
   end
 end
